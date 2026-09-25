@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KiwiStressDB 猕猴桃胁迫组学数据库：连接基因、数据集、单细胞、基因组与可追溯文献证据。">
+  <meta name="theme-color" content="#082f2a">
+  <title>KiwiStressDB｜猕猴桃胁迫组学数据库</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23b8dd62'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23f5f3d5'/%3E%3Cg fill='%23082f2a'%3E%3Cellipse cx='32' cy='13' rx='2' ry='5'/%3E%3Cellipse cx='32' cy='51' rx='2' ry='5'/%3E%3Cellipse cx='13' cy='32' rx='5' ry='2'/%3E%3Cellipse cx='51' cy='32' rx='5' ry='2'/%3E%3Cellipse cx='19' cy='19' rx='2' ry='5' transform='rotate(-45 19 19)'/%3E%3Cellipse cx='45' cy='45' rx='2' ry='5' transform='rotate(-45 45 45)'/%3E%3Cellipse cx='45' cy='19' rx='2' ry='5' transform='rotate(45 45 19)'/%3E%3Cellipse cx='19' cy='45' rx='2' ry='5' transform='rotate(45 19 45)'/%3E%3C/g%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #112b28;
+      --muted: #607370;
+      --deep: #082f2a;
+      --deep-2: #0e4139;
+      --lime: #b8dd62;
+      --lime-strong: #83b52f;
+      --cream: #f5f3df;
+      --paper: #fbfcf8;
+      --line: #dce5df;
+      --blue: #317f91;
+      --orange: #c2682d;
+      --purple: #755ca8;
+      --danger: #a64b40;
+      --shadow: 0 18px 48px rgba(8, 47, 42, .09);
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    [hidden] { display: none !important; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 8px;
+      left: 8px;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #fff;
+      color: var(--deep);
+    }
+    .skip-link:focus { transform: none; }
+
+    .app-shell { min-height: 100vh; }
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      z-index: 20;
+      width: 272px;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(circle at 18% 8%, rgba(184, 221, 98, .18), transparent 25%),
+        linear-gradient(180deg, var(--deep), #06221f 82%);
+      color: #f7fbef;
+      padding: 28px 20px 22px;
+      border-right: 1px solid rgba(255, 255, 255, .08);
+    }
+    .brand {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      align-items: center;
+      text-decoration: none;
+      margin-bottom: 26px;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--lime);
+      color: var(--deep);
+      font-weight: 900;
+      box-shadow: inset 0 -4px 0 rgba(8, 47, 42, .12);
+    }
+    .brand-title { display: block; font-weight: 780; letter-spacing: -.02em; font-size: 1.07rem; }
+    .brand-sub { display: block; color: #c3d3cb; font-size: .75rem; letter-spacing: .11em; }
+    .nav-label { margin: 0 10px 8px; color: #93aaa1; font-size: .76rem; letter-spacing: .14em; }
+    .side-nav { display: grid; gap: 4px; }
+    .side-nav a {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-height: 44px;
+      padding: 9px 12px;
+      border-radius: 12px;
+      color: #cfddd5;
+      text-decoration: none;
+      font-size: .92rem;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .side-nav a:hover, .side-nav a:focus-visible, .side-nav a.active {
+      color: #fff;
+      background: rgba(255, 255, 255, .09);
+      outline: none;
+    }
+    .side-nav a.active { box-shadow: inset 3px 0 var(--lime); }
+    .nav-num { color: var(--lime); font: 700 .73rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .sidebar-foot { margin-top: auto; border-top: 1px solid rgba(255, 255, 255, .1); padding: 18px 10px 0; }
+    .snapshot { margin: 0 0 10px; color: #aabeb5; font-size: .78rem; }
+    .principle { margin: 0; color: #dce7e1; font-size: .84rem; line-height: 1.55; }
+
+    main { margin-left: 272px; padding: 34px clamp(22px, 4vw, 62px) 72px; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .eyebrow { margin: 0 0 3px; color: var(--lime-strong); font-size: .77rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.45rem); line-height: 1.14; letter-spacing: -.035em; }
+    .version {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: .84rem;
+      box-shadow: 0 8px 20px rgba(8, 47, 42, .05);
+    }
+    .version::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--lime-strong); }
+
+    .search-panel {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, .55fr);
+      gap: 28px;
+      align-items: center;
+      min-height: 270px;
+      padding: clamp(25px, 4vw, 46px);
+      border-radius: 28px;
+      color: #f9fff9;
+      background:
+        linear-gradient(125deg, rgba(184, 221, 98, .09), transparent 43%),
+        linear-gradient(145deg, var(--deep-2), var(--deep));
+      box-shadow: var(--shadow);
+    }
+    .search-panel::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -110px;
+      width: 320px;
+      height: 320px;
+      border: 44px solid rgba(184, 221, 98, .08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .search-copy { position: relative; z-index: 1; }
+    .search-copy h2 { margin: 0 0 10px; max-width: 700px; font-size: clamp(1.8rem, 3.6vw, 3.25rem); line-height: 1.05; letter-spacing: -.045em; }
+    .search-copy p { margin: 0 0 23px; max-width: 670px; color: #c9dbd1; }
+    .global-search { position: relative; max-width: 700px; }
+    .global-search input {
+      width: 100%;
+      height: 58px;
+      padding: 0 120px 0 49px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 15px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .16);
+    }
+    .global-search input:focus { box-shadow: 0 0 0 4px rgba(184, 221, 98, .28), 0 14px 30px rgba(0,0,0,.16); }
+    .search-icon { position: absolute; left: 17px; top: 17px; color: var(--deep); font-size: 1.1rem; }
+    .search-hint { position: absolute; right: 9px; top: 9px; height: 40px; display: grid; place-items: center; padding: 0 13px; border-radius: 10px; background: var(--cream); color: var(--deep); font-size: .78rem; font-weight: 750; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .quick-links button { border: 1px solid rgba(255,255,255,.18); border-radius: 999px; padding: 6px 11px; background: transparent; color: #e6f0ea; cursor: pointer; font-size: .8rem; }
+    .quick-links button:hover, .quick-links button:focus-visible { border-color: var(--lime); color: var(--lime); outline: none; }
+    .atlas-orbit { position: relative; z-index: 1; min-height: 188px; display: grid; place-items: center; }
+    .orbit-core {
+      width: 116px;
+      height: 116px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--deep);
+      text-align: center;
+      font-weight: 850;
+      line-height: 1.15;
+      box-shadow: 0 0 0 14px rgba(184,221,98,.1), 0 0 0 32px rgba(184,221,98,.04);
+    }
+    .orbit-tag { position: absolute; padding: 6px 10px; border: 1px solid rgba(255,255,255,.17); border-radius: 999px; background: rgba(255,255,255,.06); color: #e3eee8; font-size: .76rem; }
+    .orbit-tag.t1 { top: 0; left: 8%; }
+    .orbit-tag.t2 { top: 15%; right: 0; }
+    .orbit-tag.t3 { bottom: 10%; right: 5%; }
+    .orbit-tag.t4 { bottom: 0; left: 5%; }
+    .orbit-tag.t5 { top: 35%; left: 0; }
+
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border: 1px solid #d8dfb9;
+      border-radius: 14px;
+      background: #fbfce9;
+      color: #4e5b32;
+      font-size: .87rem;
+    }
+    .notice b { color: #314313; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+    .stat-card { padding: 20px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 8px 25px rgba(8,47,42,.04); }
+    .stat-value { display: block; font-size: clamp(1.45rem, 2.5vw, 2.2rem); font-weight: 820; letter-spacing: -.04em; color: var(--deep); }
+    .stat-label { display: block; color: var(--muted); font-size: .85rem; }
+    .stat-note { display: block; margin-top: 7px; color: #8b9a96; font-size: .72rem; }
+
+    .section { scroll-margin-top: 26px; margin-top: 58px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 18px; }
+    .section-kicker { margin: 0 0 4px; color: var(--lime-strong); font: 800 .78rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; }
+    .section h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.17; letter-spacing: -.035em; }
+    .section-desc { margin: 6px 0 0; max-width: 720px; color: var(--muted); }
+    .section-action { flex: 0 0 auto; }
+    .btn { min-height: 42px; border: 0; border-radius: 11px; padding: 9px 14px; background: var(--deep); color: #fff; font-weight: 720; cursor: pointer; }
+    .btn:hover, .btn:focus-visible { background: var(--deep-2); outline: 3px solid rgba(49,127,145,.2); }
+    .btn.secondary { border: 1px solid var(--line); background: #fff; color: var(--deep); }
+    .btn.small { min-height: 34px; padding: 6px 10px; font-size: .78rem; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .filter-chip { border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; background: #fff; color: var(--muted); cursor: pointer; font-size: .83rem; }
+    .filter-chip:hover, .filter-chip:focus-visible, .filter-chip.active { border-color: var(--deep); color: #fff; background: var(--deep); outline: none; }
+
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; box-shadow: 0 12px 35px rgba(8,47,42,.04); }
+    table { width: 100%; min-width: 850px; border-collapse: collapse; }
+    th, td { padding: 15px 16px; border-bottom: 1px solid #edf1ee; text-align: left; vertical-align: top; }
+    th { background: #f3f7f2; color: #536762; font-size: .78rem; letter-spacing: .04em; }
+    td { font-size: .9rem; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #fcfdf9; }
+    .dataset-title { font-weight: 760; color: var(--deep); }
+    .dataset-sub { display: block; margin-top: 2px; color: var(--muted); font-size: .78rem; }
+    .pill { display: inline-flex; align-items: center; min-height: 25px; padding: 3px 8px; border-radius: 999px; font-size: .72rem; font-weight: 760; white-space: nowrap; }
+    .pill.heat { background: #fff0e7; color: #a24c19; }
+    .pill.cold { background: #e9f5f8; color: #236678; }
+    .pill.pathogen { background: #f2eefa; color: #624b91; }
+    .pill.salt { background: #eef3df; color: #526b1d; }
+    .pill.water { background: #e7f2ed; color: #27705a; }
+    .pill.ready { background: #e9f5e5; color: #39732a; }
+    .pill.pending { background: #f3f1ec; color: #786e5e; }
+    .pill.internal { background: #eaf0f5; color: #3d5c72; }
+    .record-link { color: #1f6f7f; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .record-link:hover { color: var(--deep); }
+
+    .gene-layout { display: grid; grid-template-columns: minmax(270px, .62fr) minmax(0, 1.38fr); gap: 16px; }
+    .gene-list, .gene-detail { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+    .gene-list { padding: 10px; }
+    .gene-tab { width: 100%; display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 13px 12px; border: 0; border-bottom: 1px solid #edf1ee; background: transparent; color: var(--ink); text-align: left; cursor: pointer; }
+    .gene-tab:last-child { border-bottom: 0; }
+    .gene-tab:hover, .gene-tab:focus-visible, .gene-tab.active { border-radius: 11px; background: #f2f7ec; outline: none; }
+    .gene-tab strong { display: block; color: var(--deep); font-size: .93rem; }
+    .gene-tab span { display: block; color: var(--muted); font-size: .74rem; }
+    .gene-tab em { align-self: center; color: var(--lime-strong); font-style: normal; }
+    .gene-detail { position: relative; overflow: hidden; min-height: 390px; padding: clamp(22px, 3vw, 35px); }
+    .gene-detail::after { content: "GENE"; position: absolute; right: -10px; bottom: -42px; color: rgba(8,47,42,.035); font-size: 8rem; font-weight: 900; pointer-events: none; }
+    .gene-id { color: var(--muted); font: 700 .82rem/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .gene-detail h3 { margin: 5px 0 4px; font-size: 1.8rem; letter-spacing: -.035em; }
+    .gene-function { margin: 0 0 20px; color: var(--muted); }
+    .evidence-list { position: relative; z-index: 1; display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    .evidence-list li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: start; padding: 11px 12px; border-radius: 12px; background: #f7f9f5; }
+    .evidence-list li::before { content: ""; width: 9px; height: 9px; margin-top: 7px; border-radius: 50%; background: var(--lime-strong); box-shadow: 0 0 0 4px #e6efd2; }
+    .evidence-list b { display: block; color: var(--deep); font-size: .87rem; }
+    .evidence-list span { display: block; color: var(--muted); font-size: .81rem; }
+
+    .pathway-card { overflow: hidden; border-radius: 24px; background: var(--deep); color: #fff; box-shadow: var(--shadow); }
+    .pathway-top { padding: clamp(24px, 4vw, 42px); background: linear-gradient(115deg, rgba(184,221,98,.13), transparent); }
+    .pathway-top h3 { margin: 0 0 8px; font-size: clamp(1.35rem, 3vw, 2.2rem); }
+    .pathway-top p { margin: 0; color: #c7d8d0; }
+    .evidence-chain { display: grid; grid-template-columns: 1fr 48px 1fr 48px 1fr 48px 1fr; align-items: stretch; padding: 0 clamp(24px, 4vw, 42px) 36px; }
+    .chain-node { display: grid; place-items: center; min-height: 125px; padding: 18px; border: 1px solid rgba(255,255,255,.13); border-radius: 17px; background: rgba(255,255,255,.06); text-align: center; }
+    .chain-node strong { display: block; color: var(--lime); font-size: 1.06rem; }
+    .chain-node span { display: block; margin-top: 4px; color: #c9d7d1; font-size: .75rem; }
+    .chain-arrow { display: grid; place-items: center; color: var(--lime); font-size: 1.35rem; }
+    .uncertain { border-style: dashed; }
+    .uncertain strong { color: #f3d4a7; }
+    .chain-note { margin: 0; padding: 15px clamp(24px, 4vw, 42px); border-top: 1px solid rgba(255,255,255,.09); color: #adbfB7; font-size: .79rem; }
+
+    .sc-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 16px; }
+    .sc-summary { border-radius: 22px; padding: 28px; background: var(--cream); }
+    .big-number { display: block; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 1; font-weight: 880; letter-spacing: -.06em; color: var(--deep); }
+    .big-label { color: var(--muted); }
+    .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; }
+    .mini-metric { padding: 12px; border-top: 3px solid var(--lime-strong); background: rgba(255,255,255,.55); }
+    .mini-metric b { display: block; font-size: 1.25rem; color: var(--deep); }
+    .mini-metric span { color: var(--muted); font-size: .75rem; }
+    .library-card { border: 1px solid var(--line); border-radius: 22px; padding: 25px; background: #fff; }
+    .library-card h3 { margin: 0 0 4px; }
+    .library-card > p { margin: 0 0 18px; color: var(--muted); }
+    .library-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .library-group { padding: 15px; border-radius: 14px; background: #f6f9f5; }
+    .library-group h4 { margin: 0 0 9px; color: var(--deep); }
+    .library-chip { display: inline-flex; align-items: center; gap: 6px; margin: 3px 3px 3px 0; padding: 5px 8px; border-radius: 8px; background: #fff; color: #526560; font: 700 .72rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .library-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--lime-strong); }
+    .cell-types { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .cell-types span { padding: 5px 9px; border-radius: 9px; background: #edf4ec; color: #476045; font-size: .75rem; }
+
+    .resource-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .resource-card { position: relative; overflow: hidden; min-height: 205px; padding: 21px; border: 1px solid var(--line); border-radius: 18px; background: #fff; }
+    .resource-card::after { content: attr(data-code); position: absolute; right: -4px; bottom: -23px; color: rgba(8,47,42,.05); font-size: 4.8rem; font-weight: 900; }
+    .resource-card h3 { position: relative; z-index: 1; margin: 10px 0 6px; color: var(--deep); }
+    .resource-card p { position: relative; z-index: 1; margin: 0; color: var(--muted); font-size: .84rem; }
+    .resource-status { position: relative; z-index: 1; display: inline-block; font-size: .72rem; font-weight: 760; color: var(--lime-strong); }
+
+    .literature-list { display: grid; gap: 10px; }
+    .paper { display: grid; grid-template-columns: 58px minmax(0,1fr) auto; gap: 15px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: #fff; }
+    .paper-year { display: grid; place-items: center; min-height: 45px; border-radius: 10px; background: var(--deep); color: var(--lime); font-weight: 820; font-size: .82rem; }
+    .paper h3 { margin: 0; font-size: .94rem; line-height: 1.45; }
+    .paper p { margin: 3px 0 0; color: var(--muted); font-size: .78rem; }
+    .paper-actions { display: flex; gap: 6px; }
+    .icon-btn { min-width: 38px; min-height: 38px; border: 1px solid var(--line); border-radius: 10px; background: #fff; color: var(--deep); cursor: pointer; }
+    .icon-btn:hover, .icon-btn:focus-visible { border-color: var(--deep); outline: 2px solid rgba(8,47,42,.1); }
+
+    .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .tool-card { padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: #fff; }
+    .tool-card h3 { margin: 0 0 5px; }
+    .tool-card > p { margin: 0 0 16px; color: var(--muted); font-size: .85rem; }
+    .field-row { display: flex; gap: 8px; }
+    .field-row input { min-width: 0; flex: 1; height: 46px; padding: 0 13px; border: 1px solid #cfdad4; border-radius: 11px; outline: none; }
+    .field-row input:focus { border-color: var(--deep); box-shadow: 0 0 0 3px rgba(49,127,145,.13); }
+    .result-box { min-height: 68px; margin-top: 12px; padding: 13px; border-radius: 11px; background: #f4f7f3; color: var(--muted); font-size: .84rem; }
+    .result-box strong { display: block; color: var(--deep); }
+    .download-list { display: grid; gap: 8px; }
+    .download-row { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 12px; border-radius: 12px; background: #f6f8f5; }
+    .download-row strong { display: block; color: var(--deep); font-size: .86rem; }
+    .download-row span { color: var(--muted); font-size: .74rem; }
+
+    .empty-state { padding: 28px; border: 1px dashed #bdcac3; border-radius: 16px; color: var(--muted); text-align: center; background: #fff; }
+    .search-results { margin-top: 18px; }
+    .search-results h3 { margin: 0 0 10px; font-size: 1rem; }
+    .result-list { display: grid; gap: 8px; }
+    .search-result { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 11px; background: #fff; cursor: pointer; }
+    .search-result:hover { border-color: var(--lime-strong); }
+    .search-result b { color: var(--deep); }
+    .search-result span { color: var(--muted); font-size: .78rem; }
+
+    .footer { margin-top: 64px; padding-top: 25px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 24px; color: var(--muted); font-size: .78rem; }
+    .toast { position: fixed; right: 22px; bottom: 22px; z-index: 50; max-width: 330px; padding: 12px 16px; border-radius: 12px; background: var(--deep); color: #fff; box-shadow: 0 16px 36px rgba(8,47,42,.24); opacity: 0; transform: translateY(12px); pointer-events: none; transition: .2s ease; }
+    .toast.show { opacity: 1; transform: none; }
+    mark { padding: 0 2px; border-radius: 3px; background: #e5f2bd; color: inherit; }
+
+    @media (max-width: 1100px) {
+      .sidebar { position: sticky; top: 0; width: 100%; height: auto; flex-direction: row; align-items: center; padding: 11px 16px; overflow-x: auto; }
+      .brand { grid-template-columns: 34px auto; flex: 0 0 auto; margin: 0 18px 0 0; }
+      .brand-mark { width: 34px; height: 34px; border-radius: 10px; font-size: .78rem; }
+      .brand-title { font-size: .88rem; }
+      .brand-sub, .nav-label, .sidebar-foot { display: none; }
+      .side-nav { display: flex; flex: 0 0 auto; }
+      .side-nav a { min-height: 36px; padding: 6px 10px; font-size: .79rem; }
+      .side-nav a.active { box-shadow: inset 0 -2px var(--lime); }
+      main { margin-left: 0; padding-top: 25px; }
+      .resource-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 780px) {
+      main { padding-inline: 16px; }
+      .topbar { align-items: flex-start; }
+      .version { padding: 7px 9px; font-size: .72rem; }
+      .search-panel { grid-template-columns: 1fr; padding: 28px 20px; }
+      .atlas-orbit { min-height: 160px; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .section { margin-top: 45px; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .gene-layout, .sc-grid, .tools-grid { grid-template-columns: 1fr; }
+      .gene-list { display: flex; overflow-x: auto; }
+      .gene-tab { min-width: 160px; border-bottom: 0; border-right: 1px solid #edf1ee; }
+      .evidence-chain { grid-template-columns: 1fr; gap: 8px; }
+      .chain-arrow { min-height: 28px; transform: rotate(90deg); }
+      .resource-grid { grid-template-columns: 1fr; }
+      .paper { grid-template-columns: 48px 1fr; }
+      .paper-actions { grid-column: 2; }
+      .footer { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .brand-title { display: none; }
+      .brand { gap: 0; margin-right: 6px; }
+      .side-nav a { padding: 6px 9px; }
+      .nav-num { display: none; }
+      .search-copy h2 { font-size: 1.86rem; }
+      .global-search input { height: 54px; padding-right: 18px; }
+      .search-hint { display: none; }
+      .stat-card { padding: 16px; }
+      .metric-row { grid-template-columns: 1fr; }
+      .library-groups { grid-template-columns: 1fr; }
+      .field-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <a class="brand" href="#overview" aria-label="KiwiStressDB 首页">
+        <span class="brand-mark">K+</span>
+        <span><span class="brand-title">KiwiStressDB</span><span class="brand-sub">ACTINIDIA STRESS ATLAS</span></span>
+      </a>
+      <p class="nav-label">DATABASE</p>
+      <nav class="side-nav">
+        <a href="#overview" class="active"><span class="nav-num">01</span>总览</a>
+        <a href="#datasets"><span class="nav-num">02</span>数据集</a>
+        <a href="#genes"><span class="nav-num">03</span>基因检索</a>
+        <a href="#heat"><span class="nav-num">04</span>耐热专题</a>
+        <a href="#single-cell"><span class="nav-num">05</span>单细胞</a>
+        <a href="#genomes"><span class="nav-num">06</span>基因组</a>
+        <a href="#literature"><span class="nav-num">07</span>文献库</a>
+        <a href="#tools"><span class="nav-num">08</span>工具</a>
+      </nav>
+      <div class="sidebar-foot">
+        <p class="snapshot">DATA SNAPSHOT · 2026.09.25</p>
+        <p class="principle">只展示可追溯记录。未导入的矩阵、序列与公开编号明确标注“待接入”。</p>
+      </div>
+    </aside>
+
+    <main id="main">
+      <header class="topbar">
+        <div><p class="eyebrow">Actinidia stress atlas</p><h1>猕猴桃胁迫组学数据库</h1></div>
+        <span class="version">框架版本 v0.2</span>
+      </header>
+
+      <section id="overview" class="search-panel" aria-labelledby="overview-title">
+        <div class="search-copy">
+          <h2 id="overview-title">从一条基因，追溯完整胁迫证据</h2>
+          <p>连接内部实验、公开文献、单细胞注释与基因组资源，快速定位猕猴桃胁迫研究中的基因、材料和证据状态。</p>
+          <div class="global-search">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <label class="sr-only" for="globalSearch" hidden>全站搜索</label>
+            <input id="globalSearch" type="search" autocomplete="off" placeholder="搜索基因、胁迫、材料或文献编号…" aria-describedby="searchHelp">
+            <span class="search-hint">按 Enter 搜索</span>
+          </div>
+          <div class="quick-links" id="searchHelp" aria-label="快速搜索">
+            <button type="button" data-query="AcHSFA2-2">AcHSFA2-2</button>
+            <button type="button" data-query="AcBBX6">AcBBX6</button>
+            <button type="button" data-query="AcAPX2">AcAPX2</button>
+            <button type="button" data-query="高温">高温</button>
+            <button type="button" data-query="Psa">Psa</button>
+          </div>
+        </div>
+        <div class="atlas-orbit" aria-label="数据库覆盖基因组、转录组、单细胞、表型与文献">
+          <div class="orbit-core">STRESS<br>ATLAS</div>
+          <span class="orbit-tag t1">GENOME</span><span class="orbit-tag t2">BULK RNA</span><span class="orbit-tag t3">SINGLE CELL</span><span class="orbit-tag t4">PHENOTYPE</span><span class="orbit-tag t5">PAPERS</span>
+        </div>
+      </section>
+
+      <div class="notice" role="note"><span aria-hidden="true">ⓘ</span><div><b>数据边界：</b>本版本已撤除模拟表达图和模拟单细胞图。内部数据仅展示已确认的实验设计与分析结论；表达矩阵、序列文件及尚未公开的登录号均标记为“待接入”。</div></div>
+      <section class="stat-grid" aria-label="当前数据概况">
+        <article class="stat-card"><span class="stat-value" id="datasetCount">8</span><span class="stat-label">可追溯数据记录</span><span class="stat-note">内部实验 + 公开研究</span></article>
+        <article class="stat-card"><span class="stat-value">9</span><span class="stat-label">已核对文献入口</span><span class="stat-note">DOI / PubMed 可回溯</span></article>
+        <article class="stat-card"><span class="stat-value">126,772</span><span class="stat-label">单细胞/细胞核</span><span class="stat-note">HY叶片 0 h / 3 h</span></article>
+        <article class="stat-card"><span class="stat-value">6</span><span class="stat-label">单细胞文库</span><span class="stat-note">两个处理 × 三个重复</span></article>
+      </section>
+
+      <section id="searchResults" class="search-results" hidden aria-live="polite">
+        <h3>搜索结果</h3><div id="resultList" class="result-list"></div>
+      </section>
+
+      <section id="datasets" class="section" aria-labelledby="datasets-title">
+        <div class="section-head">
+          <div><p class="section-kicker">02 / DATASETS</p><h2 id="datasets-title">胁迫数据集</h2><p class="section-desc">用胁迫类型筛选当前可追溯记录；“待接入”不代表数据缺失，而是尚未导入网站的可下载层。</p></div>
+          <button type="button" class="btn secondary section-action" id="exportCsv">导出当前列表 CSV</button>
+        </div>
+        <div class="filters" id="stressFilters" aria-label="胁迫类型筛选"></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>记录</th><th>胁迫</th><th>材料 / 组织</th><th>设计</th><th>来源</th><th>接入状态</th></tr></thead>
+            <tbody id="datasetRows"></tbody>
+          </table>
+        </div>
+        <div id="datasetEmpty" class="empty-state" hidden>没有匹配的可追溯记录。</div>
+      </section>
+
+      <section id="genes" class="section" aria-labelledby="genes-title">
+        <div class="section-head"><div><p class="section-kicker">03 / GENE EXPLORER</p><h2 id="genes-title">基因检索</h2><p class="section-desc">首批聚焦耐热、抗氧化、光系统与海藻糖代谢候选基因；详情只显示已经确认的证据状态。</p></div></div>
+        <div class="gene-layout"><div class="gene-list" id="geneList" role="tablist" aria-label="候选基因"></div><article class="gene-detail" id="geneDetail" aria-live="polite"></article></div>
+      </section>
+
+      <section id="heat" class="section" aria-labelledby="heat-title">
+        <div class="section-head"><div><p class="section-kicker">04 / HEAT FOCUS</p><h2 id="heat-title">耐热专题：证据链而非结论跳跃</h2><p class="section-desc">把已验证互作、组学关联和仍需验证的直接调控分开呈现。</p></div></div>
+        <article class="pathway-card">
+          <div class="pathway-top"><h3>AcHSFA2-2–AcBBX6–AcAPX2 / AsA–ROS</h3><p>当前工作模型：AcBBX6可能协同AcHSFA2-2调控抗氧化响应，连接AsA依赖的H₂O₂清除与耐热表型。</p></div>
+          <div class="evidence-chain">
+            <div class="chain-node"><div><strong>AcHSFA2-2</strong><span>热响应转录因子</span></div></div><div class="chain-arrow">→</div>
+            <div class="chain-node"><div><strong>AcBBX6</strong><span>Y2H互作候选 · Actinidia09934</span></div></div><div class="chain-arrow">→</div>
+            <div class="chain-node uncertain"><div><strong>AcAPX2</strong><span>直接调控关系待验证</span></div></div><div class="chain-arrow">→</div>
+            <div class="chain-node"><div><strong>AsA / ROS</strong><span>抗氧化与H₂O₂稳态</span></div></div>
+          </div>
+          <p class="chain-note">实线节点：已有内部实验或组学依据；虚线节点：研究假设，不能解读为已完成的ChIP、Y1H或双荧光素酶验证。</p>
+        </article>
+      </section>
+
+      <section id="single-cell" class="section" aria-labelledby="sc-title">
+        <div class="section-head"><div><p class="section-kicker">05 / SINGLE-CELL ATLAS</p><h2 id="sc-title">HY叶片单细胞/单核图谱</h2><p class="section-desc">25°C适应后进行40°C高温处理；0 h和3 h各3个生物学重复。当前展示已确认的分析摘要，不绘制模拟表达点图。</p></div></div>
+        <div class="sc-grid">
+          <article class="sc-summary"><span class="big-number">126,772</span><span class="big-label">高质量细胞/细胞核</span><div class="metric-row"><div class="mini-metric"><b>19</b><span>clusters</span></div><div class="mini-metric"><b>5</b><span>主要细胞群</span></div><div class="mini-metric"><b>319</b><span>Mesophyll严格上调基因</span></div></div></article>
+          <article class="library-card"><h3>6个文库 · 处理设计已核对</h3><p>表达矩阵与逐细胞注释文件：<span class="pill pending">待接入下载</span></p><div class="library-groups"><div class="library-group"><h4>HY · 0 h</h4><span class="library-chip">hy0h_1</span><span class="library-chip">hy0h_2</span><span class="library-chip">hy0h_3</span></div><div class="library-group"><h4>HY · 3 h</h4><span class="library-chip">hy3h_1</span><span class="library-chip">hy3h_2</span><span class="library-chip">hy3h_3</span></div></div><div class="cell-types"><span>Mesophyll</span><span>Vascular parenchyma</span><span>Epidermal lineage</span><span>Phloem</span><span>Bundle sheath</span></div></article>
+        </div>
+      </section>
+
+      <section id="genomes" class="section" aria-labelledby="genomes-title">
+        <div class="section-head"><div><p class="section-kicker">06 / GENOME RESOURCES</p><h2 id="genomes-title">基因组资源</h2><p class="section-desc">为后续泛基因组和高温变异分析预留统一入口；尚未完成质量确认的组装不标记为T2T。</p></div></div>
+        <div class="resource-grid">
+          <article class="resource-card" data-code="JX"><span class="resource-status">ASSEMBLY QC</span><h3>JX02</h3><p><i>Actinidia eriantha</i> 耐热材料；HiFi高连续性参考引导组装。严格T2T与完全单倍型解析尚未确认。</p></article>
+          <article class="resource-card" data-code="HY"><span class="resource-status">ANNOTATION</span><h3>HY4P</h3><p>耐热材料基因组；结构注释与证据补全持续优化，当前版本可用于叶片高温候选变异分析。</p></article>
+          <article class="resource-card" data-code="DH"><span class="resource-status">IN PROGRESS</span><h3>DH</h3><p>统一流程注释资源；用于与HY4P、KY开展同流程的泛基因组比较。</p></article>
+          <article class="resource-card" data-code="KY"><span class="resource-status">REFERENCE LINK</span><h3>KY</h3><p>阔叶猕猴桃已发表参考资源；正式版本号、GFF和叶片转录组登录号待接入。</p></article>
+        </div>
+      </section>
+
+      <section id="literature" class="section" aria-labelledby="literature-title">
+        <div class="section-head"><div><p class="section-kicker">07 / LITERATURE</p><h2 id="literature-title">可追溯文献库</h2><p class="section-desc">首批9条记录均保留DOI或PubMed入口；点击标题访问原始记录，复制按钮可复制引用标识。</p></div></div>
+        <div class="literature-list" id="literatureList"></div>
+      </section>
+
+      <section id="tools" class="section" aria-labelledby="tools-title">
+        <div class="section-head"><div><p class="section-kicker">08 / TOOLS</p><h2 id="tools-title">在线工具</h2><p class="section-desc">第一版提供已确认的ID映射与当前元数据导出；没有映射依据时明确返回“待接入”。</p></div></div>
+        <div class="tools-grid">
+          <article class="tool-card"><h3>基因ID转换</h3><p>输入Hongyang V3或V2 ID。当前只开放已经核对的映射。</p><div class="field-row"><input id="idInput" type="text" placeholder="例如 Actinidia03760"><button class="btn" id="convertId" type="button">转换</button></div><div class="result-box" id="idResult">当前可用映射：Actinidia03760 ↔ Ach13g315041.2</div></article>
+          <article class="tool-card"><h3>数据快照</h3><p>下载网站当前展示的元数据，不包含尚未公开的表达矩阵或序列。</p><div class="download-list"><div class="download-row"><div><strong>胁迫数据集目录</strong><span>CSV · 当前筛选结果</span></div><button type="button" class="btn small" data-download="datasets">下载</button></div><div class="download-row"><div><strong>候选基因目录</strong><span>CSV · ID与证据状态</span></div><button type="button" class="btn small" data-download="genes">下载</button></div><div class="download-row"><div><strong>文献目录</strong><span>CSV · DOI / PubMed</span></div><button type="button" class="btn small" data-download="papers">下载</button></div></div></article>
+        </div>
+      </section>
+
+      <footer class="footer"><span>KiwiStressDB · 数据快照 2026-09-25</span><span>维护方向：猕猴桃高温、ROS稳态、单细胞与泛基因组</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const datasets = [
+      {id:'KSD-HT-001', title:'HY vs HT 叶片高温时间序列', sub:'Bulk RNA-seq / metabolome metadata', stress:'高温', cls:'heat', material:'HY、HT · 叶片', design:'0 / 1 / 3 / 8 h', source:'内部数据', status:'表达矩阵待接入', state:'pending', key:'HY HT 高温 bulk RNA transcriptome metabolome'},
+      {id:'KSD-SC-001', title:'HY叶片高温单细胞/单核图谱', sub:'6 libraries · 126,772 cells/nuclei', stress:'高温', cls:'heat', material:'HY · 叶片', design:'0 h / 3 h，各3重复', source:'内部分析', status:'元数据已接入', state:'ready', key:'single cell scRNA hy0h hy3h 单细胞 19 clusters'},
+      {id:'KSD-HT-002', title:'AcEGY3介导猕猴桃耐热', sub:'Nature Communications 16:6184', stress:'高温', cls:'heat', material:'猕猴桃 · 叶片/叶绿体', design:'自然变异与功能验证', source:'DOI 10.1038/s41467-025-61593-5', status:'文献入口已接入', state:'ready', key:'AcEGY3 ROS chloroplast thermotolerance'},
+      {id:'KSD-CS-001', title:'软枣猕猴桃差异耐寒转录组', sub:'Full-length transcriptome', stress:'低温', cls:'cold', material:'A. arguta · 两基因型', design:'对比耐寒响应', source:'PubMed 34380415', status:'文献入口已接入', state:'ready', key:'cold freezing transcriptome 软枣猕猴桃'},
+      {id:'KSD-PSA-001', title:'猕猴桃响应Psa侵染转录组', sub:'Jinkui / pathogen response', stress:'病原侵染', cls:'pathogen', material:'Jinkui · 植株', design:'Psa感染响应', source:'DOI 10.3390/ijms19020373', status:'文献入口已接入', state:'ready', key:'Psa Pseudomonas syringae actinidiae bacterial canker'},
+      {id:'KSD-WL-001', title:'美味猕猴桃涝害响应转录组', sub:'Responsive genes under waterlogging', stress:'涝害', cls:'water', material:'A. deliciosa · 幼苗', design:'涝害处理', source:'PubMed 37958870', status:'文献入口已接入', state:'ready', key:'waterlogging flood transcriptome 涝害'},
+      {id:'KSD-SS-001', title:'外源油菜素内酯调节盐耐受', sub:'Physiology and transcriptome', stress:'盐胁迫', cls:'salt', material:'Hongyang · 猕猴桃', design:'BR处理与盐胁迫', source:'PubMed 38139080', status:'文献入口已接入', state:'ready', key:'salt brassinosteroid Hongyang'},
+      {id:'KSD-WL-002', title:'KR5与Hayward涝害生理响应', sub:'Contrasting rootstocks', stress:'涝害', cls:'water', material:'KR5、Hayward · 砧木', design:'0 / 3 / 7 / 11 d等', source:'DOI 10.3390/plants10122586', status:'文献入口已接入', state:'ready', key:'waterlogging rootstock KR5 Hayward physiology'}
+    ];
+
+    const genes = [
+      {name:'AcHSFA2-2', id:'统一命名：AcHSFA2-2', family:'HSF转录因子', desc:'热响应核心候选转录因子；网站统一使用AcHSFA2-2，避免旧命名混用。', evidence:[['内部互作','Y2H筛库获得AcBBX6等互作候选。'],['Bulk RNA','HY/HT 0、1、3、8 h表达记录已完成分析，矩阵待接入。'],['前期机制','已确认其参与AcEGY3相关叶绿体ROS稳态研究。'],['待验证','与AcAPX2的直接启动子调控关系尚未确证。']]},
+      {name:'AcBBX6', id:'Actinidia09934', family:'BBX转录调控蛋白', desc:'AcHSFA2-2酵母筛库候选互作蛋白，是当前耐热专题的协同调控候选。', evidence:[['蛋白互作','Y2H筛库结果已确认。'],['材料设计','RNAi与CRISPR双靶点设计正在推进。'],['假设边界','协同调控AcAPX2仍属于待验证机制。']]},
+      {name:'AcAPX2-like', id:'V3 Actinidia03760 · V2 Ach13g315041.2', family:'抗坏血酸过氧化物酶', desc:'连接AsA利用与H₂O₂清除的抗氧化候选基因；V3到Hongyang V2最佳命中已核对。', evidence:[['ID映射','Actinidia03760 → Ach13g315041.2。'],['单细胞','用于Vit C相关细胞类型表达展示；正式矩阵待接入。'],['映射边界','Reciprocal best-hit未通过，页面保留该限制。'],['待验证','HSFA2-2是否直接结合其启动子尚待ChIP/Y1H等实验。']]},
+      {name:'AcEGY3', id:'Nature Communications 2025', family:'叶绿体膜内蛋白酶', desc:'自然变异调控叶绿体ROS稳态并赋予猕猴桃耐热性，作为数据库的已发表机制锚点。', evidence:[['已发表','Nature Communications 16:6184。'],['DOI','10.1038/s41467-025-61593-5。'],['公共记录','PubMed 40615434 · PMC12227537。']]},
+      {name:'AcLHCA2.2', id:'Actinidia20711', family:'光系统I捕光复合体蛋白', desc:'AcHSFA2-2互作方向的光系统候选蛋白，用于衔接高温、光合功能与蛋白稳定性研究。', evidence:[['内部实验','烟草LCI互作已验证。'],['表达趋势','HY中HSF与LHCA随高温时间上升；MHZ11中HSF上升而LHCA基本持平。'],['后续验证','计划使用定制抗体比较HY与MHZ11的0、1、3 h蛋白水平。']]},
+      {name:'Trehalose genes', id:'Actinidia19470 / 20215 / 28125 / 22188', family:'海藻糖代谢候选集', desc:'用于HY与HT高温差异中的海藻糖合成、去磷酸化与降解环节追踪。', evidence:[['TPS-like','Actinidia19470。'],['TPP','Actinidia20215、Actinidia28125。'],['Trehalase','Actinidia22188。'],['数据状态','表达矩阵与基因序列待接入。']]}
+    ];
+
+    const papers = [
+      {year:'2025', title:'Natural variation of AcEGY3 mediates chloroplastic ROS homeostasis to confer kiwifruit thermotolerance', meta:'Ling C. et al. · Nature Communications 16:6184 · 高温', id:'10.1038/s41467-025-61593-5', url:'https://doi.org/10.1038/s41467-025-61593-5'},
+      {year:'2023', title:'Kiwifruit bZIP transcription factor AcePosF21 elicits ascorbic acid biosynthesis during cold stress', meta:'Liu X. et al. · Plant Physiology 192:982–999 · 低温', id:'10.1093/plphys/kiad121', url:'https://doi.org/10.1093/plphys/kiad121'},
+      {year:'2023', title:'Hydrogen-rich water alleviates chilling injury-induced lignification of kiwifruit by inhibiting peroxidase activity and improving antioxidant system', meta:'Liu S. et al. · Journal of the Science of Food and Agriculture 103:2675–2680 · 冷害', id:'10.1002/jsfa.12272', url:'https://doi.org/10.1002/jsfa.12272'},
+      {year:'2021', title:'Full-length transcriptome profiling reveals insight into the cold response of two kiwifruit genotypes (A. arguta) with contrasting freezing tolerances', meta:'BMC Plant Biology 21:365 · 低温', id:'PMID 34380415', url:'https://pubmed.ncbi.nlm.nih.gov/34380415/'},
+      {year:'2018', title:'Transcriptome Analysis of Kiwifruit in Response to Pseudomonas syringae pv. actinidiae Infection', meta:'International Journal of Molecular Sciences 19:373 · Psa', id:'10.3390/ijms19020373', url:'https://doi.org/10.3390/ijms19020373'},
+      {year:'2021', title:'Physiological Responses of Two Contrasting Kiwifruit (Actinidia spp.) Rootstocks against Waterlogging Stress', meta:'Plants 10:2586 · 涝害', id:'10.3390/plants10122586', url:'https://doi.org/10.3390/plants10122586'},
+      {year:'2023', title:'Transcriptome Analysis Reveals the Molecular Mechanism and Responsive Genes of Waterlogging Stress in Actinidia deliciosa Planch Kiwifruit Plants', meta:'International Journal of Molecular Sciences 24:15887 · 涝害', id:'10.3390/ijms242115887', url:'https://doi.org/10.3390/ijms242115887'},
+      {year:'2023', title:'Genome-wide identification of HSF gene family in kiwifruit and the function of AeHSFA2b in salt tolerance', meta:'International Journal of Molecular Sciences 24:15638 · 盐胁迫', id:'10.3390/ijms242115638', url:'https://doi.org/10.3390/ijms242115638'},
+      {year:'2023', title:'Physiological Characteristics and Transcriptome Analysis of Exogenous Brassinosteroid-Treated Kiwifruit', meta:'盐胁迫 · Hongyang · 公共文献入口', id:'PMID 38139080', url:'https://pubmed.ncbi.nlm.nih.gov/38139080/'}
+    ];
+
+    const stressOrder = ['全部','高温','低温','病原侵染','盐胁迫','涝害'];
+    let activeStress = '全部';
+    let activeGene = 0;
+
+    const escapeHtml = value => String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+
+    function renderFilters() {
+      const counts = datasets.reduce((acc, item) => (acc[item.stress]=(acc[item.stress]||0)+1, acc), {});
+      document.getElementById('stressFilters').innerHTML = stressOrder.map(label => `<button type="button" class="filter-chip ${label===activeStress?'active':''}" data-stress="${label}">${label} ${label==='全部'?datasets.length:(counts[label]||0)}</button>`).join('');
+    }
+
+    function filteredDatasets() { return activeStress === '全部' ? datasets : datasets.filter(d => d.stress === activeStress); }
+
+    function renderDatasets() {
+      const current = filteredDatasets();
+      document.getElementById('datasetRows').innerHTML = current.map(d => `<tr><td><span class="dataset-title">${d.title}</span><span class="dataset-sub">${d.id} · ${d.sub}</span></td><td><span class="pill ${d.cls}">${d.stress}</span></td><td>${d.material}</td><td>${d.design}</td><td>${d.source}</td><td><span class="pill ${d.state}">${d.status}</span></td></tr>`).join('');
+      document.getElementById('datasetEmpty').hidden = current.length > 0;
+      document.querySelector('.table-wrap').hidden = current.length === 0;
+    }
+
+    function renderGenes() {
+      document.getElementById('geneList').innerHTML = genes.map((g,i) => `<button type="button" role="tab" aria-selected="${i===activeGene}" class="gene-tab ${i===activeGene?'active':''}" data-gene="${i}"><span><strong>${g.name}</strong><span>${g.id}</span></span><em>↗</em></button>`).join('');
+      const g = genes[activeGene];
+      document.getElementById('geneDetail').innerHTML = `<span class="gene-id">${g.id}</span><h3>${g.name}</h3><p class="gene-function">${g.family}｜${g.desc}</p><ul class="evidence-list">${g.evidence.map(e=>`<li><div><b>${e[0]}</b><span>${e[1]}</span></div></li>`).join('')}</ul>`;
+    }
+
+    function renderPapers() {
+      document.getElementById('literatureList').innerHTML = papers.map((p,i) => `<article class="paper"><div class="paper-year">${p.year}</div><div><h3><a class="record-link" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.title}</a></h3><p>${p.meta} · ${p.id}</p></div><div class="paper-actions"><button type="button" class="icon-btn copy-paper" data-paper="${i}" aria-label="复制 ${p.id}">⧉</button><a class="icon-btn" href="${p.url}" target="_blank" rel="noopener noreferrer" aria-label="打开原始记录" style="display:grid;place-items:center;text-decoration:none">↗</a></div></article>`).join('');
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast'); toast.textContent = message; toast.classList.add('show'); clearTimeout(showToast.timer); showToast.timer = setTimeout(()=>toast.classList.remove('show'), 2200);
+    }
+
+    function runSearch(raw) {
+      const q = raw.trim().toLowerCase(); const panel = document.getElementById('searchResults'); const list = document.getElementById('resultList');
+      if (!q) { panel.hidden = true; return; }
+      const hits = [];
+      genes.forEach((g,i) => { const hay = [g.name,g.id,g.family,g.desc,...g.evidence.flat()].join(' ').toLowerCase(); if (hay.includes(q)) hits.push({type:'基因',title:g.name,meta:g.id,target:'#genes',gene:i}); });
+      datasets.forEach(d => { const hay = Object.values(d).join(' ').toLowerCase(); if (hay.includes(q)) hits.push({type:'数据集',title:d.title,meta:`${d.stress} · ${d.status}`,target:'#datasets'}); });
+      papers.forEach(p => { const hay = Object.values(p).join(' ').toLowerCase(); if (hay.includes(q)) hits.push({type:'文献',title:p.title,meta:p.id,target:'#literature'}); });
+      panel.hidden = false;
+      list.innerHTML = hits.length ? hits.slice(0,12).map((h,i)=>`<button type="button" class="search-result" data-hit="${i}"><span><b>${h.title}</b><br><span>${h.type} · ${h.meta}</span></span><span>前往 →</span></button>`).join('') : '<div class="empty-state">未找到已接入记录。表达矩阵、序列或公开编号可能仍处于“待接入”状态。</div>';
+      list.querySelectorAll('[data-hit]').forEach(btn => btn.addEventListener('click', () => { const h=hits[Number(btn.dataset.hit)]; if(Number.isInteger(h.gene)){activeGene=h.gene;renderGenes();} document.querySelector(h.target).scrollIntoView({behavior:'smooth'}); }));
+      panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+
+    function csvEscape(value) { const s=String(value??''); return /[",\n]/.test(s) ? `"${s.replace(/"/g,'""')}"` : s; }
+    function downloadCsv(name, headers, rows) {
+      const content = '\uFEFF' + [headers, ...rows].map(row => row.map(csvEscape).join(',')).join('\n');
+      const url = URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8'})); const a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); showToast('CSV 已生成');
+    }
+    function exportDatasets() { const rows=filteredDatasets().map(d=>[d.id,d.title,d.stress,d.material,d.design,d.source,d.status]); downloadCsv('KiwiStressDB_datasets.csv',['ID','记录','胁迫','材料/组织','设计','来源','接入状态'],rows); }
+
+    document.addEventListener('click', event => {
+      const stress = event.target.closest('[data-stress]'); if(stress){activeStress=stress.dataset.stress;renderFilters();renderDatasets();}
+      const gene = event.target.closest('[data-gene]'); if(gene){activeGene=Number(gene.dataset.gene);renderGenes();}
+      const query = event.target.closest('[data-query]'); if(query){document.getElementById('globalSearch').value=query.dataset.query;runSearch(query.dataset.query);}
+      const copy = event.target.closest('.copy-paper'); if(copy){const p=papers[Number(copy.dataset.paper)]; navigator.clipboard.writeText(`${p.title}. ${p.id}`).then(()=>showToast('引用标识已复制')).catch(()=>showToast(p.id));}
+      const dl = event.target.closest('[data-download]'); if(dl){
+        if(dl.dataset.download==='datasets') exportDatasets();
+        if(dl.dataset.download==='genes') downloadCsv('KiwiStressDB_genes.csv',['基因','ID','类别','证据摘要'],genes.map(g=>[g.name,g.id,g.family,g.evidence.map(e=>e.join(': ')).join(' | ')]));
+        if(dl.dataset.download==='papers') downloadCsv('KiwiStressDB_literature.csv',['年份','题目','来源/胁迫','标识','链接'],papers.map(p=>[p.year,p.title,p.meta,p.id,p.url]));
+      }
+    });
+    document.getElementById('globalSearch').addEventListener('keydown', e => { if(e.key==='Enter') runSearch(e.currentTarget.value); });
+    document.getElementById('exportCsv').addEventListener('click', exportDatasets);
+    document.getElementById('convertId').addEventListener('click', () => {
+      const raw=document.getElementById('idInput').value.trim(); const key=raw.toLowerCase(); const result=document.getElementById('idResult');
+      if(key==='actinidia03760') result.innerHTML='<strong>Hongyang V2：Ach13g315041.2</strong>最佳命中已核对；reciprocal best-hit 未通过。';
+      else if(key==='ach13g315041.2') result.innerHTML='<strong>Hongyang V3：Actinidia03760</strong>最佳命中已核对；reciprocal best-hit 未通过。';
+      else result.innerHTML='<strong>暂无已核对映射</strong>该ID将在参考版本和注释表接入后补充；系统不会自动猜测。';
+    });
+    document.getElementById('idInput').addEventListener('keydown', e => { if(e.key==='Enter') document.getElementById('convertId').click(); });
+
+    const navLinks = [...document.querySelectorAll('.side-nav a')];
+    const observer = new IntersectionObserver(entries => { entries.filter(e=>e.isIntersecting).forEach(entry => { navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id)); }); }, {rootMargin:'-20% 0px -70% 0px'});
+    document.querySelectorAll('main > section[id]').forEach(section=>observer.observe(section));
+
+    document.getElementById('datasetCount').textContent = datasets.length;
+    renderFilters(); renderDatasets(); renderGenes(); renderPapers();
+  </script>
+</body>
+</html>
