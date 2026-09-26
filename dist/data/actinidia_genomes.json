@@ -5,7 +5,9 @@
     "updated": "2026-09-26",
     "source": "https://ngdc.cncb.ac.cn/gwh/browse/genome",
     "count": 104,
-    "annotation_count": 46
+    "annotation_count": 46,
+    "cds_count": 46,
+    "protein_count": 46
   },
   "assemblies": [
     {
@@ -22,6 +24,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92189/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_CY_GWHFPXE00000000.1/GWHFPXE00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -39,6 +42,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92174/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_CY.hap1_GWHFPWH00000000.1/GWHFPWH00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -56,6 +60,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92175/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_CY.hap2_GWHFPWI00000000.1/GWHFPWI00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -73,6 +78,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92188/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_GZ_GWHFPXD00000000.1/GWHFPXD00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -90,6 +96,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92172/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_GZ.hap1_GWHFPWF00000000.1/GWHFPWF00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -107,6 +114,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92173/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_GZ.hap2_GWHFPWG00000000.1/GWHFPWG00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -124,6 +132,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/86173/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_HY_GWHFFOV00000000.1/GWHFFOV00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -141,6 +150,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92170/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_HY.hap1_GWHFPWD00000000.1/GWHFPWD00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -158,6 +168,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92171/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_HY.hap2_GWHFPWE00000000.1/GWHFPWE00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -175,6 +186,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/86174/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_HY1_GWHFFOW00000000.1/GWHFFOW00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -192,6 +204,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92191/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_JL_GWHFPXG00000000.1/GWHFPXG00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -209,6 +222,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92178/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_JL.hap1_GWHFPWL00000000.1/GWHFPWL00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -226,6 +240,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92179/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_JL.hap2_GWHFPWM00000000.1/GWHFPWM00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -243,6 +258,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92190/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_KY_GWHFPXF00000000.1/GWHFPXF00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -260,6 +276,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92176/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_KY.hap1_GWHFPWJ00000000.1/GWHFPWJ00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -277,6 +294,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92177/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_KY.hap2_GWHFPWK00000000.1/GWHFPWK00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -294,6 +312,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92192/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_MH_GWHFPXH00000000.1/GWHFPXH00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -311,6 +330,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92180/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_MH.hap1_GWHFPWN00000000.1/GWHFPWN00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -328,6 +348,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92181/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_MH.hap2_GWHFPWO00000000.1/GWHFPWO00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -345,6 +366,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92193/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_MW_GWHFPXI00000000.1/GWHFPXI00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -362,6 +384,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92182/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_MW.hap1_GWHFPWP00000000.1/GWHFPWP00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -379,6 +402,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/92183/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_MW.hap2_GWHFPWQ00000000.1/GWHFPWQ00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -396,6 +420,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/83694/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_AaLC2_GWHERBY00000000/GWHERBY00000000.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_AaLC2_GWHERBY00000000/GWHERBY00000000.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_AaLC2_GWHERBY00000000/GWHERBY00000000.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_AaLC2_GWHERBY00000000/GWHERBY00000000.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_AaLC2_GWHERBY00000000/GWHERBY00000000.Protein.faa.gz"
     },
@@ -413,6 +438,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/88099/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_KY_Aar_GWHFIKU00000000.1/GWHFIKU00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_KY_Aar_GWHFIKU00000000.1/GWHFIKU00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_KY_Aar_GWHFIKU00000000.1/GWHFIKU00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_KY_Aar_GWHFIKU00000000.1/GWHFIKU00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_KY_Aar_GWHFIKU00000000.1/GWHFIKU00000000.1.Protein.faa.gz"
     },
@@ -430,6 +456,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/83526/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_M1_GWHBJWW00000000/GWHBJWW00000000.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_M1_GWHBJWW00000000/GWHBJWW00000000.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_M1_GWHBJWW00000000/GWHBJWW00000000.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_M1_GWHBJWW00000000/GWHBJWW00000000.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_arguta_M1_GWHBJWW00000000/GWHBJWW00000000.Protein.faa.gz"
     },
@@ -447,6 +474,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/1771535/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/030/159/Actinidia_arguta_var._hypoleuca_eudicots_AAR_r2.2_GCA_030159115.1/GCA_030159115.1_AAR_r2.2_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -464,6 +492,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3186645/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/051/903/Actinidia_chinensis_golden_kiwifruit_ASM5190371v1_GCA_051903715.1/GCA_051903715.1_ASM5190371v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -481,6 +510,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/55951/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/009/663/Actinidia_chinensis_eudicots_ASM966300v1_GCA_009663005.1/GCA_009663005.1_ASM966300v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -498,6 +528,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84839/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Biyu.hap1_GWHESRM00000000/GWHESRM00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -515,6 +546,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84836/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Biyu.hap2_GWHESRI00000000/GWHESRI00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -532,6 +564,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/30457/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_DH_GWHBQLK00000000/GWHBQLK00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -549,6 +582,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/64058/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Hongyang_v4.0_GWHDODM00000000/GWHDODM00000000.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Hongyang_v4.0_GWHDODM00000000/GWHDODM00000000.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Hongyang_v4.0_GWHDODM00000000/GWHDODM00000000.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Hongyang_v4.0_GWHDODM00000000/GWHDODM00000000.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Hongyang_v4.0_GWHDODM00000000/GWHDODM00000000.Protein.faa.gz"
     },
@@ -566,6 +600,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84844/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Hort16A.hap1_GWHESRQ00000000/GWHESRQ00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -583,6 +618,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84843/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Hort16A.hap2_GWHESRP00000000/GWHESRP00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -600,6 +636,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84837/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Huangyang.hap1_GWHESRJ00000000/GWHESRJ00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -617,6 +654,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84838/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Huangyang.hap2_GWHESRK00000000/GWHESRK00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -634,6 +672,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84842/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Jinmi.hap1_GWHESRO00000000/GWHESRO00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -651,6 +690,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84841/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Jinmi.hap2_GWHESRN00000000/GWHESRN00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -668,6 +708,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84848/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Jinpai.hap1_GWHESRU00000000/GWHESRU00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -685,6 +726,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84835/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Jinpai.hap2_GWHESRH00000000/GWHESRH00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -702,6 +744,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/54883/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/000/467/Actinidia_chinensis_eudicots_Kiwifruit_v1_GCA_000467755.1/GCA_000467755.1_Kiwifruit_v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -719,6 +762,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84846/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Zps18.hap1_GWHESRS00000000/GWHESRS00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -736,6 +780,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/84845/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_Zps18.hap2_GWHESRR00000000/GWHESRR00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -753,6 +798,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130727/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_ACM4_GWHJJEP00000000.1/GWHJJEP00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_ACM4_GWHJJEP00000000.1/GWHJJEP00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_ACM4_GWHJJEP00000000.1/GWHJJEP00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_ACM4_GWHJJEP00000000.1/GWHJJEP00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_ACM4_GWHJJEP00000000.1/GWHJJEP00000000.1.Protein.faa.gz"
     },
@@ -770,6 +816,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3137434/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/051/167/Actinidia_chinensis_var._chinensis_eudicots_ASM5116738v1_GCA_051167385.1/GCA_051167385.1_ASM5116738v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -787,6 +834,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130726/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_Kuimi_GWHJJEO00000000.1/GWHJJEO00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_Kuimi_GWHJJEO00000000.1/GWHJJEO00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_Kuimi_GWHJJEO00000000.1/GWHJJEO00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_Kuimi_GWHJJEO00000000.1/GWHJJEO00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_chinensis_var._chinensis_Kuimi_GWHJJEO00000000.1/GWHJJEO00000000.1.Protein.faa.gz"
     },
@@ -804,6 +852,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/55381/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/003/024/Actinidia_chinensis_var._chinensis_eudicots_Red5_PS1_1.69.0_GCA_003024255.1/GCA_003024255.1_Red5_PS1_1.69.0_genomic.fna.gz",
       "gff": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/003/024/Actinidia_chinensis_var._chinensis_eudicots_Red5_PS1_1.69.0_GCA_003024255.1/GCA_003024255.1_Red5_PS1_1.69.0_genomic.gff.gz",
+      "cds": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/003/024/Actinidia_chinensis_var._chinensis_eudicots_Red5_PS1_1.69.0_GCA_003024255.1/GCA_003024255.1_Red5_PS1_1.69.0_cds_from_genomic.fna.gz",
       "rna": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/003/024/Actinidia_chinensis_var._chinensis_eudicots_Red5_PS1_1.69.0_GCA_003024255.1/GCA_003024255.1_Red5_PS1_1.69.0_rna_from_genomic.fna.gz",
       "protein": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/003/024/Actinidia_chinensis_var._chinensis_eudicots_Red5_PS1_1.69.0_GCA_003024255.1/GCA_003024255.1_Red5_PS1_1.69.0_protein.faa.gz"
     },
@@ -821,6 +870,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130728/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_deliciosa_ADM_GWHJJEQ00000000.1/GWHJJEQ00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_deliciosa_ADM_GWHJJEQ00000000.1/GWHJJEQ00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_deliciosa_ADM_GWHJJEQ00000000.1/GWHJJEQ00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_deliciosa_ADM_GWHJJEQ00000000.1/GWHJJEQ00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_deliciosa_ADM_GWHJJEQ00000000.1/GWHJJEQ00000000.1.Protein.faa.gz"
     },
@@ -838,6 +888,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/57126/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/024/454/Actinidia_deliciosa_eudicots_ASM2445417v1_GCA_024454175.1/GCA_024454175.1_ASM2445417v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -855,6 +906,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/55662/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/004/150/Actinidia_eriantha_eudicots_ASM415031v1_GCA_004150315.1/GCA_004150315.1_ASM415031v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -872,6 +924,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107319/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap1_GWHHJAC00000000.1/GWHHJAC00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap1_GWHHJAC00000000.1/GWHHJAC00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap1_GWHHJAC00000000.1/GWHHJAC00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap1_GWHHJAC00000000.1/GWHHJAC00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap1_GWHHJAC00000000.1/GWHHJAC00000000.1.Protein.faa.gz"
     },
@@ -889,6 +942,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107307/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap2_GWHHIZQ00000000.1/GWHHIZQ00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap2_GWHHIZQ00000000.1/GWHHIZQ00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap2_GWHHIZQ00000000.1/GWHHIZQ00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap2_GWHHIZQ00000000.1/GWHHIZQ00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_CY38.hap2_GWHHIZQ00000000.1/GWHHIZQ00000000.1.Protein.faa.gz"
     },
@@ -906,6 +960,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107320/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap1_GWHHJAD00000000.1/GWHHJAD00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap1_GWHHJAD00000000.1/GWHHJAD00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap1_GWHHJAD00000000.1/GWHHJAD00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap1_GWHHJAD00000000.1/GWHHJAD00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap1_GWHHJAD00000000.1/GWHHJAD00000000.1.Protein.faa.gz"
     },
@@ -923,6 +978,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107308/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap2_GWHHIZR00000000.1/GWHHIZR00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap2_GWHHIZR00000000.1/GWHHIZR00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap2_GWHHIZR00000000.1/GWHHIZR00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap2_GWHHIZR00000000.1/GWHHIZR00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_DG01.hap2_GWHHIZR00000000.1/GWHHIZR00000000.1.Protein.faa.gz"
     },
@@ -940,6 +996,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107321/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap1_GWHHJAE00000000.1/GWHHJAE00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap1_GWHHJAE00000000.1/GWHHJAE00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap1_GWHHJAE00000000.1/GWHHJAE00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap1_GWHHJAE00000000.1/GWHHJAE00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap1_GWHHJAE00000000.1/GWHHJAE00000000.1.Protein.faa.gz"
     },
@@ -957,6 +1014,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107309/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap2_GWHHIZS00000000.1/GWHHIZS00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap2_GWHHIZS00000000.1/GWHHIZS00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap2_GWHHIZS00000000.1/GWHHIZS00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap2_GWHHIZS00000000.1/GWHHIZS00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_GZ26.hap2_GWHHIZS00000000.1/GWHHIZS00000000.1.Protein.faa.gz"
     },
@@ -974,6 +1032,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/111519/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HA_hap1_GWHHOIL00000000.1/GWHHOIL00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -991,6 +1050,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/111521/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HA_hap1_GWHHOIR00000000.1/GWHHOIR00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1008,6 +1068,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/111520/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HA_hap2_GWHHOIM00000000.1/GWHHOIM00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1025,6 +1086,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/111522/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HA_hap2_GWHHOIS00000000.1/GWHHOIS00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1042,6 +1104,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3503735/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/982/292/Actinidia_eriantha_eudicots_HAP1_GCA_982292455.1/GCA_982292455.1_HAP1_genomic.fna.gz",
       "gff": "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/982/292/455/GCF_982292455.1_HAP1//GCF_982292455.1_HAP1_genomic.gff.gz",
+      "cds": "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/982/292/455/GCF_982292455.1_HAP1//GCF_982292455.1_HAP1_cds_from_genomic.fna.gz",
       "rna": "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/982/292/455/GCF_982292455.1_HAP1//GCF_982292455.1_HAP1_rna_from_genomic.fna.gz",
       "protein": "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/982/292/455/GCF_982292455.1_HAP1//GCF_982292455.1_HAP1_protein.faa.gz"
     },
@@ -1059,6 +1122,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3503738/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/982/292/Actinidia_eriantha_eudicots_HAP2_GCA_982292445.1/GCA_982292445.1_HAP2_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1076,6 +1140,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107322/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap1_GWHHJAF00000000.1/GWHHJAF00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap1_GWHHJAF00000000.1/GWHHJAF00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap1_GWHHJAF00000000.1/GWHHJAF00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap1_GWHHJAF00000000.1/GWHHJAF00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap1_GWHHJAF00000000.1/GWHHJAF00000000.1.Protein.faa.gz"
     },
@@ -1093,6 +1158,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107310/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap2_GWHHIZT00000000.1/GWHHIZT00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap2_GWHHIZT00000000.1/GWHHIZT00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap2_GWHHIZT00000000.1/GWHHIZT00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap2_GWHHIZT00000000.1/GWHHIZT00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HH01.hap2_GWHHIZT00000000.1/GWHHIZT00000000.1.Protein.faa.gz"
     },
@@ -1110,6 +1176,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107323/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap1_GWHHJAG00000000.1/GWHHJAG00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap1_GWHHJAG00000000.1/GWHHJAG00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap1_GWHHJAG00000000.1/GWHHJAG00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap1_GWHHJAG00000000.1/GWHHJAG00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap1_GWHHJAG00000000.1/GWHHJAG00000000.1.Protein.faa.gz"
     },
@@ -1127,6 +1194,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107311/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap2_GWHHIZU00000000.1/GWHHIZU00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap2_GWHHIZU00000000.1/GWHHIZU00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap2_GWHHIZU00000000.1/GWHHIZU00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap2_GWHHIZU00000000.1/GWHHIZU00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_HN01.hap2_GWHHIZU00000000.1/GWHHIZU00000000.1.Protein.faa.gz"
     },
@@ -1144,6 +1212,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107324/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap1_GWHHJAH00000000.1/GWHHJAH00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap1_GWHHJAH00000000.1/GWHHJAH00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap1_GWHHJAH00000000.1/GWHHJAH00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap1_GWHHJAH00000000.1/GWHHJAH00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap1_GWHHJAH00000000.1/GWHHJAH00000000.1.Protein.faa.gz"
     },
@@ -1161,6 +1230,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107312/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap2_GWHHIZV00000000.1/GWHHIZV00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap2_GWHHIZV00000000.1/GWHHIZV00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap2_GWHHIZV00000000.1/GWHHIZV00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap2_GWHHIZV00000000.1/GWHHIZV00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_LD19.hap2_GWHHIZV00000000.1/GWHHIZV00000000.1.Protein.faa.gz"
     },
@@ -1178,6 +1248,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/56638/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/019/202/Actinidia_eriantha_eudicots_MaoHua_MHT_GCA_019202715.1/GCA_019202715.1_MaoHua_MHT_genomic.fna.gz",
       "gff": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCF/019/202/Actinidia_eriantha_eudicots_MaoHua_MHT_GCF_019202715.1/GCF_019202715.1_MaoHua_MHT_genomic.gff.gz",
+      "cds": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCF/019/202/Actinidia_eriantha_eudicots_MaoHua_MHT_GCF_019202715.1/GCF_019202715.1_MaoHua_MHT_cds_from_genomic.fna.gz",
       "rna": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCF/019/202/Actinidia_eriantha_eudicots_MaoHua_MHT_GCF_019202715.1/GCF_019202715.1_MaoHua_MHT_rna_from_genomic.fna.gz",
       "protein": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCF/019/202/Actinidia_eriantha_eudicots_MaoHua_MHT_GCF_019202715.1/GCF_019202715.1_MaoHua_MHT_protein.faa.gz"
     },
@@ -1195,6 +1266,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/64037/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPA_GWHDOCT00000000/GWHDOCT00000000.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPA_GWHDOCT00000000/GWHDOCT00000000.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPA_GWHDOCT00000000/GWHDOCT00000000.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPA_GWHDOCT00000000/GWHDOCT00000000.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPA_GWHDOCT00000000/GWHDOCT00000000.Protein.faa.gz"
     },
@@ -1212,6 +1284,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/64038/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPB_GWHDOCU00000000/GWHDOCU00000000.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPB_GWHDOCU00000000/GWHDOCU00000000.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPB_GWHDOCU00000000/GWHDOCU00000000.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPB_GWHDOCU00000000/GWHDOCU00000000.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MDHAPB_GWHDOCU00000000/GWHDOCU00000000.Protein.faa.gz"
     },
@@ -1229,6 +1302,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107325/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap1_GWHHJAI00000000.1/GWHHJAI00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap1_GWHHJAI00000000.1/GWHHJAI00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap1_GWHHJAI00000000.1/GWHHJAI00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap1_GWHHJAI00000000.1/GWHHJAI00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap1_GWHHJAI00000000.1/GWHHJAI00000000.1.Protein.faa.gz"
     },
@@ -1246,6 +1320,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107313/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap2_GWHHIZW00000000.1/GWHHIZW00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap2_GWHHIZW00000000.1/GWHHIZW00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap2_GWHHIZW00000000.1/GWHHIZW00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap2_GWHHIZW00000000.1/GWHHIZW00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_MQ32.hap2_GWHHIZW00000000.1/GWHHIZW00000000.1.Protein.faa.gz"
     },
@@ -1263,6 +1338,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107326/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap1_GWHHJAJ00000000.1/GWHHJAJ00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap1_GWHHJAJ00000000.1/GWHHJAJ00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap1_GWHHJAJ00000000.1/GWHHJAJ00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap1_GWHHJAJ00000000.1/GWHHJAJ00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap1_GWHHJAJ00000000.1/GWHHJAJ00000000.1.Protein.faa.gz"
     },
@@ -1280,6 +1356,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107314/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap2_GWHHIZX00000000.1/GWHHIZX00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap2_GWHHIZX00000000.1/GWHHIZX00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap2_GWHHIZX00000000.1/GWHHIZX00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap2_GWHHIZX00000000.1/GWHHIZX00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_QS41.hap2_GWHHIZX00000000.1/GWHHIZX00000000.1.Protein.faa.gz"
     },
@@ -1297,6 +1374,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107327/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap1_GWHHJAK00000000.1/GWHHJAK00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap1_GWHHJAK00000000.1/GWHHJAK00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap1_GWHHJAK00000000.1/GWHHJAK00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap1_GWHHJAK00000000.1/GWHHJAK00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap1_GWHHJAK00000000.1/GWHHJAK00000000.1.Protein.faa.gz"
     },
@@ -1314,6 +1392,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107315/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap2_GWHHIZY00000000.1/GWHHIZY00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap2_GWHHIZY00000000.1/GWHHIZY00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap2_GWHHIZY00000000.1/GWHHIZY00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap2_GWHHIZY00000000.1/GWHHIZY00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_RY10.hap2_GWHHIZY00000000.1/GWHHIZY00000000.1.Protein.faa.gz"
     },
@@ -1331,6 +1410,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107328/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap1_GWHHJAL00000000.1/GWHHJAL00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap1_GWHHJAL00000000.1/GWHHJAL00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap1_GWHHJAL00000000.1/GWHHJAL00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap1_GWHHJAL00000000.1/GWHHJAL00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap1_GWHHJAL00000000.1/GWHHJAL00000000.1.Protein.faa.gz"
     },
@@ -1348,6 +1428,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107316/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap2_GWHHIZZ00000000.1/GWHHIZZ00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap2_GWHHIZZ00000000.1/GWHHIZZ00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap2_GWHHIZZ00000000.1/GWHHIZZ00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap2_GWHHIZZ00000000.1/GWHHIZZ00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YL01.hap2_GWHHIZZ00000000.1/GWHHIZZ00000000.1.Protein.faa.gz"
     },
@@ -1365,6 +1446,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107329/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap1_GWHHJAM00000000.1/GWHHJAM00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap1_GWHHJAM00000000.1/GWHHJAM00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap1_GWHHJAM00000000.1/GWHHJAM00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap1_GWHHJAM00000000.1/GWHHJAM00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap1_GWHHJAM00000000.1/GWHHJAM00000000.1.Protein.faa.gz"
     },
@@ -1382,6 +1464,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107317/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap2_GWHHJAA00000000.1/GWHHJAA00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap2_GWHHJAA00000000.1/GWHHJAA00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap2_GWHHJAA00000000.1/GWHHJAA00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap2_GWHHJAA00000000.1/GWHHJAA00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX01.hap2_GWHHJAA00000000.1/GWHHJAA00000000.1.Protein.faa.gz"
     },
@@ -1399,6 +1482,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107330/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap1_GWHHJAN00000000.1/GWHHJAN00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap1_GWHHJAN00000000.1/GWHHJAN00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap1_GWHHJAN00000000.1/GWHHJAN00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap1_GWHHJAN00000000.1/GWHHJAN00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap1_GWHHJAN00000000.1/GWHHJAN00000000.1.Protein.faa.gz"
     },
@@ -1416,6 +1500,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/107318/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap2_GWHHJAB00000000.1/GWHHJAB00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap2_GWHHJAB00000000.1/GWHHJAB00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap2_GWHHJAB00000000.1/GWHHJAB00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap2_GWHHJAB00000000.1/GWHHJAB00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_eriantha_YX02.hap2_GWHHJAB00000000.1/GWHHJAB00000000.1.Protein.faa.gz"
     },
@@ -1433,6 +1518,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/38016/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_hemsleyana_CY_GWHCBQA00000000/GWHCBQA00000000.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_hemsleyana_CY_GWHCBQA00000000/GWHCBQA00000000.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_hemsleyana_CY_GWHCBQA00000000/GWHCBQA00000000.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_hemsleyana_CY_GWHCBQA00000000/GWHCBQA00000000.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_hemsleyana_CY_GWHCBQA00000000/GWHCBQA00000000.Protein.faa.gz"
     },
@@ -1450,6 +1536,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3723135/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/984/542/Actinidia_hubeiensis_eudicots_Hap1_GCA_984542205.1/GCA_984542205.1_Hap1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1467,6 +1554,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3723134/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/984/542/Actinidia_hubeiensis_eudicots_Hap2_GCA_984542315.1/GCA_984542315.1_Hap2_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1484,6 +1572,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3748001/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/059/340/Actinidia_hubeiensis_eudicots_Pconcol.hap1_v1.0_GCA_059340855.1/GCA_059340855.1_Pconcol.hap1_v1.0_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1501,6 +1590,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3748000/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/059/340/Actinidia_hubeiensis_eudicots_Pconcol.hap2_v1_GCA_059340805.1/GCA_059340805.1_Pconcol.hap2_v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1518,6 +1608,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/122018/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_lanceolata_gwh_assembly_XY_GWHJENJ00000000.1/GWHJENJ00000000.1.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1535,6 +1626,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/30664/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_latifolia_KY_GWHBQTJ00000000/GWHBQTJ00000000.genome.fasta.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1552,6 +1644,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/2874982/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/042/477/Actinidia_melanandra_eudicots_ME02_01.v2.1_GCA_042477565.1/GCA_042477565.1_ME02_01.v2.1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1569,6 +1662,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/1771536/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/030/159/Actinidia_polygama_eudicots_APO_r1.1_GCA_030159135.1/GCA_030159135.1_APO_r1.1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1586,6 +1680,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/56297/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/014/362/Actinidia_rufa_nashi-kazura_A.rufaFuchu_1.0_GCA_014362265.1/GCA_014362265.1_A.rufaFuchu_1.0_genomic.fna.gz",
       "gff": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/014/362/Actinidia_rufa_nashi-kazura_A.rufaFuchu_1.0_GCA_014362265.1/GCA_014362265.1_A.rufaFuchu_1.0_genomic.gff.gz",
+      "cds": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/014/362/Actinidia_rufa_nashi-kazura_A.rufaFuchu_1.0_GCA_014362265.1/GCA_014362265.1_A.rufaFuchu_1.0_cds_from_genomic.fna.gz",
       "rna": "",
       "protein": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/014/362/Actinidia_rufa_nashi-kazura_A.rufaFuchu_1.0_GCA_014362265.1/GCA_014362265.1_A.rufaFuchu_1.0_protein.faa.gz"
     },
@@ -1603,6 +1698,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/1771537/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/030/159/Actinidia_rufa_nashi-kazura_ARU_r1.0_GCA_030159155.1/GCA_030159155.1_ARU_r1.0_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1620,6 +1716,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3646878/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/057/557/Actinidia_sp._HA-2026_eudicots_ASM5755713v1_GCA_057557135.1/GCA_057557135.1_ASM5755713v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1637,6 +1734,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/ncbi_assembly/3646877/show",
       "genome": "https://download.cncb.ac.cn/assembly/ncbi/Plants/GCA/057/557/Actinidia_sp._HA-2026_eudicots_ASM5755716v1_GCA_057557165.1/GCA_057557165.1_ASM5755716v1_genomic.fna.gz",
       "gff": "",
+      "cds": "",
       "rna": "",
       "protein": ""
     },
@@ -1654,6 +1752,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130720/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A1_GWHJJEF00000000.1/GWHJJEF00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A1_GWHJJEF00000000.1/GWHJJEF00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A1_GWHJJEF00000000.1/GWHJJEF00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A1_GWHJJEF00000000.1/GWHJJEF00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A1_GWHJJEF00000000.1/GWHJJEF00000000.1.Protein.faa.gz"
     },
@@ -1671,6 +1770,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130721/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A2_GWHJJEG00000000.1/GWHJJEG00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A2_GWHJJEG00000000.1/GWHJJEG00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A2_GWHJJEG00000000.1/GWHJJEG00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A2_GWHJJEG00000000.1/GWHJJEG00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_A2_GWHJJEG00000000.1/GWHJJEG00000000.1.Protein.faa.gz"
     },
@@ -1688,6 +1788,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130722/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B1_GWHJJEH00000000.1/GWHJJEH00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B1_GWHJJEH00000000.1/GWHJJEH00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B1_GWHJJEH00000000.1/GWHJJEH00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B1_GWHJJEH00000000.1/GWHJJEH00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B1_GWHJJEH00000000.1/GWHJJEH00000000.1.Protein.faa.gz"
     },
@@ -1705,6 +1806,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130723/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B2_GWHJJEI00000000.1/GWHJJEI00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B2_GWHJJEI00000000.1/GWHJJEI00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B2_GWHJJEI00000000.1/GWHJJEI00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B2_GWHJJEI00000000.1/GWHJJEI00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B2_GWHJJEI00000000.1/GWHJJEI00000000.1.Protein.faa.gz"
     },
@@ -1722,6 +1824,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130724/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B3_GWHJJEJ00000000.1/GWHJJEJ00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B3_GWHJJEJ00000000.1/GWHJJEJ00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B3_GWHJJEJ00000000.1/GWHJJEJ00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B3_GWHJJEJ00000000.1/GWHJJEJ00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B3_GWHJJEJ00000000.1/GWHJJEJ00000000.1.Protein.faa.gz"
     },
@@ -1739,6 +1842,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/130725/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B4_GWHJJEK00000000.1/GWHJJEK00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B4_GWHJJEK00000000.1/GWHJJEK00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B4_GWHJJEK00000000.1/GWHJJEK00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B4_GWHJJEK00000000.1/GWHJJEK00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_B4_GWHJJEK00000000.1/GWHJJEK00000000.1.Protein.faa.gz"
     },
@@ -1756,6 +1860,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/86141/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_DE_GWHFFMO00000000.1/GWHFFMO00000000.1.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_DE_GWHFFMO00000000.1/GWHFFMO00000000.1.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_DE_GWHFFMO00000000.1/GWHFFMO00000000.1.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_DE_GWHFFMO00000000.1/GWHFFMO00000000.1.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_valvata_DE_GWHFFMO00000000.1/GWHFFMO00000000.1.Protein.faa.gz"
     },
@@ -1773,6 +1878,7 @@
       "landing": "https://ngdc.cncb.ac.cn/gwh/Assembly/38017/show",
       "genome": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_zhejiangensis_ZJ_GWHCBQB00000000/GWHCBQB00000000.genome.fasta.gz",
       "gff": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_zhejiangensis_ZJ_GWHCBQB00000000/GWHCBQB00000000.gff.gz",
+      "cds": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_zhejiangensis_ZJ_GWHCBQB00000000/GWHCBQB00000000.CDS.fasta.gz",
       "rna": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_zhejiangensis_ZJ_GWHCBQB00000000/GWHCBQB00000000.RNA.fasta.gz",
       "protein": "https://download.cncb.ac.cn/gwh/Plants/Actinidia_zhejiangensis_ZJ_GWHCBQB00000000/GWHCBQB00000000.Protein.faa.gz"
     }

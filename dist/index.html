@@ -328,7 +328,7 @@
     .resource-status { position: relative; z-index: 1; display: inline-block; font-size: .72rem; font-weight: 760; color: var(--lime-strong); }
     .resource-card .record-link { position: relative; z-index: 2; display: inline-block; margin-top: 12px; font-size: .78rem; font-weight: 720; }
 
-    .genome-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 16px 0; }
+    .genome-summary { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 16px 0; }
     .genome-stat { padding: 15px 16px; border: 1px solid var(--line); border-radius: 15px; background: #f7f9f5; }
     .genome-stat b { display: block; color: var(--deep); font-size: 1.35rem; line-height: 1.1; letter-spacing: -.03em; }
     .genome-stat span { color: var(--muted); font-size: .75rem; }
@@ -340,13 +340,13 @@
     .genome-toolbar input, .genome-toolbar select { width: 100%; min-height: 43px; padding: 0 12px; border: 1px solid #cfdad4; border-radius: 10px; background: #fff; color: var(--ink); outline: none; }
     .genome-toolbar input:focus, .genome-toolbar select:focus { border-color: var(--deep); box-shadow: 0 0 0 3px rgba(49,127,145,.13); }
     .genome-table-wrap { overflow-x: auto; border-top: 1px solid var(--line); }
-    .genome-table { min-width: 1040px; }
+    .genome-table { min-width: 1140px; }
     .genome-table th, .genome-table td { padding: 13px 14px; }
     .genome-table .species-name { display: block; color: var(--deep); font-weight: 730; font-style: italic; }
     .genome-table .assembly-name { display: block; color: var(--deep); font-weight: 760; }
     .accession { display: block; margin-top: 2px; color: var(--muted); font: 650 .72rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace; }
     .genome-meta { display: block; color: var(--muted); font-size: .75rem; line-height: 1.45; }
-    .file-links { display: flex; flex-wrap: wrap; gap: 5px; min-width: 220px; }
+    .file-links { display: flex; flex-wrap: wrap; gap: 5px; min-width: 285px; }
     .file-link { display: inline-flex; align-items: center; min-height: 29px; padding: 4px 8px; border: 1px solid #cddbd2; border-radius: 8px; background: #f8faf7; color: #246b60; text-decoration: none; font-size: .72rem; font-weight: 760; }
     .file-link:hover, .file-link:focus-visible { border-color: var(--deep); background: #eef5e8; outline: none; }
     .file-link.missing { color: #9aa7a2; border-style: dashed; background: #fafafa; cursor: default; }
@@ -473,7 +473,7 @@
     <main id="main">
       <header class="topbar">
         <div><p class="eyebrow">Actinidia stress atlas</p><h1>猕猴桃胁迫组学数据库</h1></div>
-        <span class="version">资源版本 v0.3</span>
+        <span class="version">资源版本 v0.4</span>
       </header>
 
       <section id="overview" class="search-panel" aria-labelledby="overview-title">
@@ -564,6 +564,7 @@
           <div class="genome-stat"><b id="genomeTotal">104</b><span>公开组装</span></div>
           <div class="genome-stat"><b id="genomeTaxa">17</b><span>物种 / 分类条目</span></div>
           <div class="genome-stat"><b id="genomeGff">46</b><span>提供 GFF 注释</span></div>
+          <div class="genome-stat"><b id="genomeCds">46</b><span>提供 CDS 序列</span></div>
           <div class="genome-stat"><b id="genomeProtein">46</b><span>提供蛋白序列</span></div>
         </div>
         <div class="section-head" style="margin-top:24px"><div><h3 style="margin:0">课题组重点材料</h3><p class="section-desc">内部版本与公共登录号分开呈现；只有已公开记录才提供下载。</p></div></div>
@@ -578,7 +579,7 @@
           <div class="genome-toolbar">
             <input id="genomeSearch" type="search" autocomplete="off" placeholder="搜索物种、材料、版本或登录号…" aria-label="搜索基因组目录">
             <select id="genomeSpecies" aria-label="按物种筛选"><option value="">全部物种</option></select>
-            <select id="genomeAnnotation" aria-label="按注释状态筛选"><option value="">全部文件状态</option><option value="gff">有 GFF 注释</option><option value="protein">有蛋白序列</option><option value="genome-only">仅基因组</option></select>
+            <select id="genomeAnnotation" aria-label="按注释状态筛选"><option value="annotated" selected>有完整注释文件（默认）</option><option value="">全部文件状态</option><option value="gff">有 GFF 注释</option><option value="cds">有 CDS 序列</option><option value="protein">有蛋白序列</option><option value="genome-only">仅基因组</option></select>
             <select id="genomeLevel" aria-label="按组装水平筛选"><option value="">全部组装水平</option></select>
           </div>
           <div class="genome-table-wrap">
@@ -600,7 +601,7 @@
         <div class="section-head"><div><p class="section-kicker">08 / TOOLS</p><h2 id="tools-title">在线工具</h2><p class="section-desc">第一版提供已确认的ID映射与当前元数据导出；没有映射依据时明确返回“待接入”。</p></div></div>
         <div class="tools-grid">
           <article class="tool-card"><h3>基因ID转换</h3><p>输入Hongyang V3或V2 ID。当前只开放已经核对的映射。</p><div class="field-row"><input id="idInput" type="text" placeholder="例如 Actinidia03760"><button class="btn" id="convertId" type="button">转换</button></div><div class="result-box" id="idResult">当前可用映射：Actinidia03760 ↔ Ach13g315041.2</div></article>
-          <article class="tool-card"><h3>数据快照</h3><p>下载网站当前展示的元数据，不包含尚未公开的表达矩阵或序列。</p><div class="download-list"><div class="download-row"><div><strong>公开基因组目录</strong><span>CSV · FASTA / GFF / RNA / 蛋白链接</span></div><button type="button" class="btn small" data-download="genomes">下载</button></div><div class="download-row"><div><strong>胁迫数据集目录</strong><span>CSV · 当前筛选结果</span></div><button type="button" class="btn small" data-download="datasets">下载</button></div><div class="download-row"><div><strong>候选基因目录</strong><span>CSV · ID与证据状态</span></div><button type="button" class="btn small" data-download="genes">下载</button></div><div class="download-row"><div><strong>文献目录</strong><span>CSV · DOI / PubMed</span></div><button type="button" class="btn small" data-download="papers">下载</button></div></div></article>
+          <article class="tool-card"><h3>数据快照</h3><p>下载网站当前展示的元数据，不包含尚未公开的表达矩阵或序列。</p><div class="download-list"><div class="download-row"><div><strong>公开基因组目录</strong><span>CSV · FASTA / GFF / CDS / RNA / 蛋白链接</span></div><button type="button" class="btn small" data-download="genomes">下载</button></div><div class="download-row"><div><strong>胁迫数据集目录</strong><span>CSV · 当前筛选结果</span></div><button type="button" class="btn small" data-download="datasets">下载</button></div><div class="download-row"><div><strong>候选基因目录</strong><span>CSV · ID与证据状态</span></div><button type="button" class="btn small" data-download="genes">下载</button></div><div class="download-row"><div><strong>文献目录</strong><span>CSV · DOI / PubMed</span></div><button type="button" class="btn small" data-download="papers">下载</button></div></div></article>
         </div>
       </section>
 
@@ -683,7 +684,7 @@
       const level = document.getElementById('genomeLevel').value;
       return genomeAssemblies.filter(item => {
         const haystack = [item.species,item.assembly,item.accession,item.level,item.representation,item.source].join(' ').toLowerCase();
-        const annotationMatch = !annotation || (annotation === 'gff' && item.gff) || (annotation === 'protein' && item.protein) || (annotation === 'genome-only' && !item.gff && !item.protein);
+        const annotationMatch = !annotation || (annotation === 'annotated' && item.gff && item.cds && item.protein) || (annotation === 'gff' && item.gff) || (annotation === 'cds' && item.cds) || (annotation === 'protein' && item.protein) || (annotation === 'genome-only' && !item.gff && !item.cds && !item.protein);
         return (!query || haystack.includes(query)) && (!species || item.species === species) && (!level || item.level === level) && annotationMatch;
       });
     }
@@ -702,7 +703,7 @@
       document.getElementById('genomeResultCount').textContent = `显示 ${filtered.length} / ${genomeAssemblies.length} 个公开组装`;
       document.getElementById('genomeRows').innerHTML = current.length ? current.map(item => {
         const landing = safeUrl(item.landing);
-        return `<tr><td><span class="species-name">${escapeHtml(item.species)}</span></td><td><a class="assembly-name record-link" href="${escapeHtml(landing)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.assembly)}</a><span class="accession">${escapeHtml(item.accession)}</span></td><td><span class="genome-meta"><b>${escapeHtml(item.level)}</b><br>${escapeHtml(item.size)}<br>${escapeHtml(item.release_date)}</span></td><td><div class="file-links">${genomeFileLink(item.genome,'FASTA')}${genomeFileLink(item.gff,'GFF')}${genomeFileLink(item.rna,'RNA')}${genomeFileLink(item.protein,'Protein')}</div></td><td><span class="source-badge">${escapeHtml(item.source)}</span><br><a class="record-link genome-meta" href="${escapeHtml(landing)}" target="_blank" rel="noopener noreferrer">官方记录 ↗</a></td></tr>`;
+        return `<tr><td><span class="species-name">${escapeHtml(item.species)}</span></td><td><a class="assembly-name record-link" href="${escapeHtml(landing)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.assembly)}</a><span class="accession">${escapeHtml(item.accession)}</span></td><td><span class="genome-meta"><b>${escapeHtml(item.level)}</b><br>${escapeHtml(item.size)}<br>${escapeHtml(item.release_date)}</span></td><td><div class="file-links">${genomeFileLink(item.genome,'Genome')}${genomeFileLink(item.gff,'GFF')}${genomeFileLink(item.cds,'CDS')}${genomeFileLink(item.rna,'RNA')}${genomeFileLink(item.protein,'Protein')}</div></td><td><span class="source-badge">${escapeHtml(item.source)}</span><br><a class="record-link genome-meta" href="${escapeHtml(landing)}" target="_blank" rel="noopener noreferrer">官方记录 ↗</a></td></tr>`;
       }).join('') : '<tr><td colspan="5"><div class="empty-state">没有符合当前条件的公开组装。</div></td></tr>';
       const end = Math.min(start + genomePageSize, filtered.length);
       document.getElementById('genomePageInfo').textContent = filtered.length ? `第 ${genomePage} / ${pages} 页 · ${start + 1}–${end}` : '无匹配记录';
@@ -719,8 +720,8 @@
 
     function exportGenomes() {
       if (!genomeAssemblies.length) { showToast('基因组目录尚未载入'); return; }
-      const rows = genomeFilters().map(item => [item.species,item.assembly,item.accession,item.level,item.size,item.release_date,item.source,item.landing,item.genome,item.gff,item.rna,item.protein]);
-      downloadCsv('KiwiStressDB_Actinidia_genomes_2026-09-26.csv',['物种','材料/组装','登录号','组装水平','大小','发布日期','来源','官方记录','Genome FASTA','GFF','RNA FASTA','Protein FASTA'],rows);
+      const rows = genomeFilters().map(item => [item.species,item.assembly,item.accession,item.level,item.size,item.release_date,item.source,item.landing,item.genome,item.gff,item.cds,item.rna,item.protein]);
+      downloadCsv('KiwiStressDB_Actinidia_genomes_2026-09-26.csv',['物种','材料/组装','登录号','组装水平','大小','发布日期','来源','官方记录','Genome FASTA','GFF','CDS FASTA','RNA FASTA','Protein FASTA'],rows);
     }
 
     async function loadGenomes() {
@@ -734,6 +735,7 @@
         document.getElementById('genomeTotal').textContent = genomeAssemblies.length;
         document.getElementById('genomeTaxa').textContent = new Set(genomeAssemblies.map(item => item.species)).size;
         document.getElementById('genomeGff').textContent = genomeAssemblies.filter(item => item.gff).length;
+        document.getElementById('genomeCds').textContent = genomeAssemblies.filter(item => item.cds).length;
         document.getElementById('genomeProtein').textContent = genomeAssemblies.filter(item => item.protein).length;
         renderGenomes();
       } catch (error) {
@@ -756,7 +758,7 @@
       genomeAssemblies.forEach(item => { const hay = [item.species,item.assembly,item.accession,item.level].join(' ').toLowerCase(); if (hay.includes(q)) hits.push({type:'基因组',title:`${item.assembly} · ${item.species}`,meta:`${item.accession} · ${item.level}`,target:'#genomes',genomeQuery:item.accession}); });
       panel.hidden = false;
       list.innerHTML = hits.length ? hits.slice(0,12).map((h,i)=>`<button type="button" class="search-result" data-hit="${i}"><span><b>${h.title}</b><br><span>${h.type} · ${h.meta}</span></span><span>前往 →</span></button>`).join('') : '<div class="empty-state">未找到已接入记录。表达矩阵、序列或公开编号可能仍处于“待接入”状态。</div>';
-      list.querySelectorAll('[data-hit]').forEach(btn => btn.addEventListener('click', () => { const h=hits[Number(btn.dataset.hit)]; if(Number.isInteger(h.gene)){activeGene=h.gene;renderGenes();} if(h.genomeQuery){document.getElementById('genomeSearch').value=h.genomeQuery;genomePage=1;renderGenomes();} document.querySelector(h.target).scrollIntoView({behavior:'smooth'}); }));
+      list.querySelectorAll('[data-hit]').forEach(btn => btn.addEventListener('click', () => { const h=hits[Number(btn.dataset.hit)]; if(Number.isInteger(h.gene)){activeGene=h.gene;renderGenes();} if(h.genomeQuery){document.getElementById('genomeSearch').value=h.genomeQuery;document.getElementById('genomeAnnotation').value='';genomePage=1;renderGenomes();} document.querySelector(h.target).scrollIntoView({behavior:'smooth'}); }));
       panel.scrollIntoView({behavior:'smooth',block:'nearest'});
     }
 
